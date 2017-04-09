@@ -20,13 +20,14 @@
  *   Strikethrough is a single set of tildes
  * These decisions were made to reduce the toll to character count.
  *
- * to test (this needs work still!):
+ * // to test (this needs work still!):
  * const md = new Mastodown()
  * const runMd = () => {
  *   [].forEach.call($('.status__content'), (el) => {
  *     $(el).replaceWith(md.render(el.text()))
  *   })
  * }
+ * // this could use mutationobserver or something?
  * $(document).bind('DOMSubtreeModified', runMd)
  */
 
