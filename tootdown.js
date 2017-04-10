@@ -73,3 +73,19 @@ class Tootdown { // eslint-disable-line no-unused-vars
     return this.collapseNewlines(text.trim())
   }
 }
+
+// as a single function (which would be more efficient?):
+const tootdown = (post) =>
+  post
+    .replace(/\*(.*?)\*/g, '<strong>$1</strong>')
+    .replace(/_(.*?)_/g, '<em>$1</em>')
+    .replace(/~(.*?)~/g, '<del>$1</del>')
+    .replace(/\n`{3}([\S]+)?\n([\s\S]+)\n`{3}/g, (a, b, text) => `\n<pre><code>${text.trim()}</code></pre>`)
+    .replace(/`(.*?)`/g, '<code>$1</code>')
+    .replace(/\n\*(.*)/g, (_, text) => `\n<ul>\n\t<li>${text.trim()}</li>\n</ul>`)
+    .replace(/\n[0-9]+\.(.*)/g, (_, text) => `\n<ol>\n\t<li>${text.trim()}</li>\n</ol>`)
+    .replace(/\n(&gt;|>)(.*)/g, (a, b, text) => `\n<blockquote>${text.trim()}</blockquote>`)
+    .replace(/<\/ul>\s?<ul>/g, '')
+    .replace(/<\/ol>\s?<ol>/g, '')
+    .replace(/<\/blockquote>\s?<blockquote>/g, '\n')
+    .replace(/\n\s*\n/g, '\n')
