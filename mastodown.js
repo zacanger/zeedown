@@ -56,11 +56,15 @@ class Mastodown { // eslint-disable-line no-unused-vars
     ]
   }
 
+  collapseNewlines (s) { // maybe? maybe not?
+    return s.replace(/\n\s*\n/g, '\n')
+  }
+
   render (text) {
     text = `\n${text}\n`
     this.rules.forEach(({ rx, rp }) => {
       text = text.replace(rx, rp)
     })
-    return text.trim()
+    return this.collapseNewlines(text.trim())
   }
 }
