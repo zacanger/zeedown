@@ -33,14 +33,14 @@
 
 class Mastodown { // eslint-disable-line no-unused-vars
   constructor () {
-    const ul = (text, item) =>
-      `\n<ul>\n\t<li>${item.trim()}</li>\n</ul>`
+    const ul = (_, text) =>
+      `\n<ul>\n\t<li>${text.trim()}</li>\n</ul>`
 
-    const ol = (text, item) =>
-      `\n<ol>\n\t<li>${item.trim()}</li>\n</ol>`
+    const ol = (_, text) =>
+      `\n<ol>\n\t<li>${text.trim()}</li>\n</ol>`
 
-    const blockquote = (text, tmp, item) =>
-      `\n<blockquote>${item.trim()}</blockquote>`
+    const blockquote = (a, b, text) =>
+      `\n<blockquote>${text.trim()}</blockquote>`
 
     this.rules = [
       { rx: /\*(.*?)\*/g, rp: '<strong>$1</strong>' } // strong
