@@ -86,3 +86,7 @@ const tootdown = (post) =>
     .replace(/<\/ol>\s?<ol>/g, '') // clean up extra ol
     .replace(/<\/blockquote>\s?<blockquote>/g, '\n') // clean up extra blockquote
     .replace(/\n\s*\n/g, '\n') // collapse consecutive newlines
+
+// [].forEach.call($('.status__content'), (el) => {
+//   $(el).replaceWith(tootdown(el.text()))
+// })
