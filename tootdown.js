@@ -1,6 +1,6 @@
 /*
- * Possible better names than Mastodown:
- * Marktoot, Tootdown (suggested by @zaccolley@mastodon.social)
+ * Possible better names than Tootdown:
+ * Marktoot (suggested by @zaccolley@mastodon.social), Mastodown
  * Forked from https://gist.github.com/renehamburger/12f14a9bd9297394e5bd#gistcomment-1976476
  * Original Author (PHP Version): Johnny Broadway <johnny@johnnybroadway.com>
  * Website: https://gist.github.com/jbroadway/2836900
@@ -22,7 +22,7 @@
  * These decisions were made to reduce the toll to character count.
  *
  * // to test (this needs work still!):
- * const md = new Mastodown()
+ * const md = new Tootdown()
  * const runMd = () => {
  *   [].forEach.call($('.status__content'), (el) => {
  *     $(el).replaceWith(md.render(el.text()))
@@ -32,7 +32,7 @@
  * $(document).bind('DOMSubtreeModified', runMd)
  */
 
-class Mastodown { // eslint-disable-line no-unused-vars
+class Tootdown { // eslint-disable-line no-unused-vars
   constructor () {
     const ul = (_, text) =>
       `\n<ul>\n\t<li>${text.trim()}</li>\n</ul>`
