@@ -42,10 +42,14 @@ class Mastodown { // eslint-disable-line no-unused-vars
     const blockquote = (a, b, text) =>
       `\n<blockquote>${text.trim()}</blockquote>`
 
+    const codeblock = (a, b, text) =>
+      `\n<pre><code>${text.trim()}</code></pre>`
+
     this.rules = [
       { rx: /\*(.*?)\*/g, rp: '<strong>$1</strong>' } // strong
     , { rx: /_(.*?)_/g, rp: '<em>$1</em>' }           // emphasis
     , { rx: /~(.*?)~/g, rp: '<del>$1</del>' }         // strike
+    , { rx: /\n`{3}([\S]+)?\n([\s\S]+)\n`{3}/g, rp: codeblock }
     , { rx: /`(.*?)`/g, rp: '<code>$1</code>' }       // inline code
     , { rx: /\n\*(.*)/g, rp: ul }                     // ul
     , { rx: /\n[0-9]+\.(.*)/g, rp: ol }               // ol
