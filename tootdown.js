@@ -57,7 +57,7 @@ class Tootdown { // eslint-disable-line no-unused-vars
     , { rx: /\n(&gt;|>)(.*)/g, rp: bq }                   // blockquote
     , { rx: /<\/ul>\s?<ul>/g, rp: '' }                    // fix extra ul
     , { rx: /<\/ol>\s?<ol>/g, rp: '' }                    // fix extra ol
-    , { rx: /<\/blockquote><blockquote>/g, rp: '\n' }     // fix extra blockquote
+    , { rx: /<\/blockquote>\s?<blockquote>/g, rp: '\n' }     // fix extra blockquote
     ]
   }
 
