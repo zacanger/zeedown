@@ -57,12 +57,9 @@ class Tootdown { // eslint-disable-line no-unused-vars
     , { rx: /\n(&gt;|>)(.*)/g, rp: bq }                   // blockquote
     , { rx: /<\/ul>\s?<ul>/g, rp: '' }                    // fix extra ul
     , { rx: /<\/ol>\s?<ol>/g, rp: '' }                    // fix extra ol
-    , { rx: /<\/blockquote>\s?<blockquote>/g, rp: '\n' }     // fix extra blockquote
+    , { rx: /<\/blockquote>\s?<blockquote>/g, rp: '\n' }  // fix extra blockquote
+    , { rx: /\n\s*\n/g, rp: '\n' }                        // collapse consecutive newlines
     ]
-  }
-
-  collapseNewlines (s) { // maybe? maybe not?
-    return s.replace(/\n\s*\n/g, '\n')
   }
 
   render (text) {
@@ -70,22 +67,22 @@ class Tootdown { // eslint-disable-line no-unused-vars
     this.rules.forEach(({ rx, rp }) => {
       text = text.replace(rx, rp)
     })
-    return this.collapseNewlines(text.trim())
+    return text.trim()
   }
 }
 
 // as a single function (which would be more efficient?):
 const tootdown = (post) =>
   post
-    .replace(/\*(.*?)\*/g, '<strong>$1</strong>')
-    .replace(/_(.*?)_/g, '<em>$1</em>')
-    .replace(/~(.*?)~/g, '<del>$1</del>')
-    .replace(/\n`{3}([\S]+)?\n([\s\S]+)\n`{3}/g, (a, b, text) => `\n<pre><code>${text.trim()}</code></pre>`)
-    .replace(/`(.*?)`/g, '<code>$1</code>')
-    .replace(/\n\*(.*)/g, (_, text) => `\n<ul>\n\t<li>${text.trim()}</li>\n</ul>`)
-    .replace(/\n[0-9]+\.(.*)/g, (_, text) => `\n<ol>\n\t<li>${text.trim()}</li>\n</ol>`)
-    .replace(/\n(&gt;|>)(.*)/g, (a, b, text) => `\n<blockquote>${text.trim()}</blockquote>`)
-    .replace(/<\/ul>\s?<ul>/g, '')
-    .replace(/<\/ol>\s?<ol>/g, '')
-    .replace(/<\/blockquote>\s?<blockquote>/g, '\n')
-    .replace(/\n\s*\n/g, '\n')
+    .replace(/\*(.*?)\*/g, '<strong>$1</strong>') // strong
+    .replace(/_(.*?)_/g, '<em>$1</em>') // em
+    .replace(/~(.*?)~/g, '<del>$1</del>') // strike
+    .replace(/\n`{3}([\S]+)?\n([\s\S]+)\n`{3}/g, (a, b, text) => `\n<pre><code>${text.trim()}</code></pre>`) // code block
+    .replace(/`(.*?)`/g, '<code>$1</code>') // inline code
+    .replace(/\n\*(.*)/g, (_, text) => `\n<ul>\n\t<li>${text.trim()}</li>\n</ul>`) // ul
+    .replace(/\n[0-9]+\.(.*)/g, (_, text) => `\n<ol>\n\t<li>${text.trim()}</li>\n</ol>`) // ol
+    .replace(/\n(&gt;|>)(.*)/g, (a, b, text) => `\n<blockquote>${text.trim()}</blockquote>`) // block quote
+    .replace(/<\/ul>\s?<ul>/g, '') // clean up extra ul
+    .replace(/<\/ol>\s?<ol>/g, '') // clean up extra ol
+    .replace(/<\/blockquote>\s?<blockquote>/g, '\n') // clean up extra blockquote
+    .replace(/\n\s*\n/g, '\n') // collapse consecutive newlines
