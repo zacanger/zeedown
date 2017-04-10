@@ -11,6 +11,7 @@
  *   Emphasis (Italic)
  *   Deletions (Strikethrough)
  *   Inline code
+ *   Fenced code blocks (not indent)
  *   Blockquotes
  *   Ordered/unordered lists
  *
