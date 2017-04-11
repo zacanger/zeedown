@@ -1,6 +1,8 @@
 /*
  * Possible better names than Tootdown:
- * Marktoot (suggested by @zaccolley@mastodon.social), Mastodown
+ * Marktoot (suggested by @zaccolley@mastodon.social), Mastodown, Mastotoot (eh...).
+ * Each of these names has about equal support from quick polls, so ¯\_(ツ)_/¯
+ * 
  * Author: zacanger (http://zacanger.com)
  * License: WTFPL
  *
