@@ -1,6 +1,6 @@
 /*
- * Possible better names than Tootdown:
- * Marktoot (suggested by @zaccolley@mastodon.social), Mastodown, Mastotoot (eh...).
+ * Possible better names than Mastodown:
+ * Marktoot (suggested by @zaccolley@mastodon.social), Tootdown, Mastotoot (eh...).
  * Each of these names has about equal support from quick polls, so ¯\_(ツ)_/¯
  * 
  * Author: zacanger (http://zacanger.com)
@@ -24,14 +24,14 @@
  * // to test (this needs work still!):
  * const runMd = () => {
  *   [].forEach.call($('.status__content'), (el) => {
- *     $(el).replaceWith(tootdown(el.text()))
+ *     $(el).replaceWith(mastodown(el.text()))
  *   })
  * }
  * // this could use mutationobserver or something?
  * $(document).bind('DOMSubtreeModified', runMd)
  */
 
-const tootdown = (post) =>
+const mastodown = (post) =>
   post
     .replace(/\*(.*?)\*/g, '<strong>$1</strong>') // strong
     .replace(/_(.*?)_/g, '<em>$1</em>') // em
