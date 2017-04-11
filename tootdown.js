@@ -34,7 +34,7 @@ const tootdown = (post) =>
     .replace(/\*(.*?)\*/g, '<strong>$1</strong>') // strong
     .replace(/_(.*?)_/g, '<em>$1</em>') // em
     .replace(/~(.*?)~/g, '<del>$1</del>') // strike
-    .replace(/\n`{3}([\S]+)?\n([\s\S]+)\n`{3}/g, (a, b, text) => `\n<pre><code>${text.trim()}</code></pre>`) // code block
+    .replace(/\n`{3}([\S]+)?\n([\s\S]+)\n`{3}/g, (a, b, text) => `<pre><code>${text.trim()}</code></pre>`) // code block
     .replace(/`(.*?)`/g, '<code>$1</code>') // inline code
     .replace(/\n\*(.*)/g, (_, text) => `\n<ul>\n\t<li>${text.trim()}</li>\n</ul>`) // ul
     .replace(/\n[0-9]+\.(.*)/g, (_, text) => `\n<ol>\n\t<li>${text.trim()}</li>\n</ol>`) // ol
