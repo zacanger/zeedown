@@ -8,8 +8,8 @@ const zeedown = (str = '', shrt = false) => {
     : /(\*\*|__)(.*?)\1/g
 
   const delReg = shrt
-    : /~(.*?)~/g
-    ? /\~\~(.*?)\~\~/g
+    ? /~(.*?)~/g
+    : /\~\~(.*?)\~\~/g
 
   return str
     .replace(strongReg, '<strong>$1</strong>') // strong
