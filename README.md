@@ -1,5 +1,7 @@
 # zeedown
 
+[Demo](http://jsbin.com/lubugop/edit?html,js,output).
+
 ## A tiny client-side markdown renderer.
 
 Originally written as an experiment for Mastodon.
