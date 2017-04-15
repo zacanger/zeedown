@@ -3,17 +3,25 @@ const zeedown = (str = '', shrt = false) => {
     ? /_(.*?)_/g
     : /(\*|_)(.*?)\1/g
 
+  const emRep = shrt
+    ? '<em>$1</em>'
+    : '<em>$2</em>'
+
   const strongReg = shrt
     ? /\*(.*?)\*/g
     : /(\*\*|__)(.*?)\1/g
+
+  const strongRep = shrt
+    ? '<strong>$1</strong>'
+    : '<strong>$2</strong>'
 
   const delReg = shrt
     ? /~(.*?)~/g
     : /\~\~(.*?)\~\~/g
 
   return str
-    .replace(strongReg, '<strong>$1</strong>') // strong
-    .replace(emReg, '<em>$1</em>') // em
+    .replace(strongReg, strongRep) // strong
+    .replace(emReg, emRep) // em
     .replace(delReg, '<del>$1</del>') // strike
     .replace(/\n`{3}([\S]+)?\n([\s\S]+)\n`{3}/g, (a, b, text) => `\n<pre><code>${text.trim()}</code></pre>`) // code block
     .replace(/`(.*?)`/g, '<code>$1</code>') // inline code
