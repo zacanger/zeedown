@@ -10,17 +10,24 @@
 
 ## Usage
 
+`zeedown(text: string, short: ?bool)`
+
+`zeedown` takes two parameters: a required string and an optional truthy value
+to use `short` mode. In short mode:
+
+* Strong is a single set of asterisks
+* Emphasis is a single set of underscores
+* Strikethrough is a single set of tildes
+
 ```javascript
 import md from 'zeedown'
 // or
 const md = require('zeedown')
 
-md('some string')
+md('some string', true)
 md(process.argv[2])
 $('.foo').replaceWith(md($('.bar').text()))
 ```
-
-`zeedown` takes no options.
 
 ### Supports
 
@@ -31,13 +38,6 @@ $('.foo').replaceWith(md($('.bar').text()))
 * Fenced code blocks (not indent)
 * Blockquotes
 * Ordered/unordered lists
-
-### Differences from commonmark
-
-* Strong is a single set of asterisks
-* Emphasis is a single set of underscores
-* Strikethrough is a single set of tildes
-* These decisions were made to reduce the toll to character count.
 
 ### Status
 
