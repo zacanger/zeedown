@@ -4,6 +4,24 @@
 
 ## A tiny client-side markdown renderer.
 
+## Installation
+
+`npm i -S zeedown` or `yarn add zeedown`
+
+## Usage
+
+```javascript
+import md from 'zeedown'
+// or
+const md = require('zeedown')
+
+md('some string')
+md(process.argv[2])
+$('.foo').replaceWith(md($('.bar').text()))
+```
+
+`zeedown` takes no options.
+
 ### Supports
 
 * Strong (Bold)
