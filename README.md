@@ -1,8 +1,8 @@
 # zeedown
 
-[Demo](http://jsbin.com/lubugop/edit?html,js,output).
+## Tiny markdown renderer for Node and browser, with CLI.
 
-## A tiny client-side markdown renderer.
+[Demo](http://jsbin.com/lubugop/edit?html,js,output).
 
 ## Installation
 
@@ -29,7 +29,15 @@ md(process.argv[2])
 $('.foo').replaceWith(md($('.bar').text()))
 ```
 
-### Supports
+## CLI
+
+`zeedown` comes with a small CLI. Usage:
+
+`cat foo.md | zeedown > foo.html`
+
+It takes an optional flag `-s` (or `--short`) to use `short` mode.
+
+## Supported Features
 
 * Strong (Bold)
 * Emphasis (Italic)
@@ -39,19 +47,25 @@ $('.foo').replaceWith(md($('.bar').text()))
 * Blockquotes
 * Ordered/unordered lists
 
-### Status
+## Why Not Feature X?
+
+If you want links, images, syntax highlighting, and other fancy stuff,
+you're probably better off using a full-featured implementation. Try `marked`,
+it's super popular.
+
+## Status
 
 Everything specified works. `ol`, `ul`, and `blockquote` are a little funky
 (only work if not indented at all, need an extra pass to strip extra tags).
 
-### Performance
+## Performance
 
 A [quick little benchmark](https://jsperf.com/tootdown) has inconsistent results
 but it seems okay. This was originally implemented as a class with a render
 method, but the benchmark usually shows the function performing significantly
 better. Which makes me happy, because I'm not overly fond of ES classes.
 
-### Notes on using with Mastodon
+## Notes on using with Mastodon
 
 This was originally written as an experiment for Mastodon.
 
