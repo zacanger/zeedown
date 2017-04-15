@@ -1,5 +1,5 @@
-const zeedown = (post) =>
-  post
+const zeedown = (s) =>
+  s
     .replace(/\*(.*?)\*/g, '<strong>$1</strong>') // strong
     .replace(/_(.*?)_/g, '<em>$1</em>') // em
     .replace(/~(.*?)~/g, '<del>$1</del>') // strike

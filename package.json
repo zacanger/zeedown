@@ -1,7 +1,7 @@
 {
   "name": "zeedown",
   "description": "Tiny client-side markdown renderer.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Zac Anger <zac@zacanger.com> (http://zacanger.com)",
   "license": "WTFPL",
   "main": "index.js",

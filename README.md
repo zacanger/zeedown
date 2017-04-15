@@ -50,10 +50,9 @@ const runMd = () => {
 $(document).bind('DOMSubtreeModified', runMd)
 ```
 
-The test function on line 25 isn't working quite right. It's using jQuery just
-because Mastodon already has jQuery loaded, but should be totally doable without
-as well. It also updates all statuses every time there's a change, which is a
-mess.
+This test function isn't working quite right. It's using jQuery just because
+Mastodon already has jQuery loaded, but should be totally doable without as
+well. It also updates all statuses every time there's a change, which is a mess.
 
 Why this instead of just using marked/commonmark/showdown/whatever? Two reasons:
 
