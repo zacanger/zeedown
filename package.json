@@ -1,13 +1,13 @@
 {
   "name": "zeedown",
   "description": "Tiny markdown renderer for Node and browser, with CLI.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "Zac Anger <zac@zacanger.com> (http://zacanger.com)",
   "license": "WTFPL",
   "main": "index.js",
   "bin": "./cli.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test"
   },
   "homepage": "https://github.com/zacanger/zeedown#readme",
   "repository": {

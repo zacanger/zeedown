@@ -25,8 +25,8 @@ const zeedown = (str = '', shrt = false) => {
     .replace(delReg, '<del>$1</del>') // strike
     .replace(/\n`{3}([\S]+)?\n([\s\S]+)\n`{3}/g, (a, b, text) => `\n<pre><code>${text.trim()}</code></pre>`) // code block
     .replace(/`(.*?)`/g, '<code>$1</code>') // inline code
-    .replace(/\n\*(.*)/g, (_, text) => `\n<ul>\n\t<li>${text.trim()}</li>\n</ul>`) // ul
-    .replace(/\n[0-9]+\.(.*)/g, (_, text) => `\n<ol>\n\t<li>${text.trim()}</li>\n</ol>`) // ol
+    .replace(/\n\*(.*)/g, (_, text) => `\n<ul>\n<li>${text.trim()}</li>\n</ul>`) // ul
+    .replace(/\n[0-9]+\.(.*)/g, (_, text) => `\n<ol>\n<li>${text.trim()}</li>\n</ol>`) // ol
     .replace(/\n(&gt;|>)(.*)/g, (a, b, text) => `\n<blockquote>${text.trim()}</blockquote>`) // block quote
     .replace(/<\/ul>\s?<ul>/g, '') // clean up extra ul
     .replace(/<\/ol>\s?<ol>/g, '') // clean up extra ol
