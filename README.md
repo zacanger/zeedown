@@ -69,7 +69,21 @@ better. Which makes me happy, because I'm not overly fond of ES classes.
 
 This was originally written as an experiment for Mastodon.
 
-To test on Mastodon (this needs work still):
+To test in Mastodon, modify `components/components/status_content`:
+
+```diff
+-    const content = { __html: emojify(status.get('content')) };
++    const content = { __html: emojify(md(status.get('content'), true)) };
+```
+
+(Where `md` is `import md from 'zeedown'`.)
+
+You'll also need to override CSS to get `em` and `strong` to actually work.
+
+There's a full working diff
+[here](https://github.com/tootsuite/mastodon/compare/master...zacanger:feature/md).
+
+To test on Mastodon without changing any code (this needs work still):
 
 ```javascript
 const runMd = () => {
