@@ -112,15 +112,6 @@ Why this instead of just using marked/commonmark/showdown/whatever? Two reasons:
 I'm excited about making this work as a browser extension, but it's only until
 [this issue](https://github.com/tootsuite/mastodon/issues/853) has a response.
 
-Also worth noting, I think integrating this into Mastodon _could_ be as simple
-as modifying
-[this line](https://github.com/tootsuite/mastodon/blob/master/app/assets/javascripts/components/components/status_content.jsx#L94),
-possibly conditionally based on some bit of metadata (assuming Markdown is
-optional).
-
-Changes were made recently around collapsing whitespace in statuses. I'm not
-sure how this would affect that, or what the goal is there.
-
 ## License
 
 [WTFPL](./LICENSE.md)
