@@ -19,6 +19,8 @@ to use `short` mode. In short mode:
 * Emphasis is a single set of underscores
 * Strikethrough is a single set of tildes
 
+This is essentially the same as Slack's basic Markdown.
+
 ```javascript
 import md from 'zeedown'
 // or
