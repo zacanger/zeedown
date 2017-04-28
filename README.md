@@ -69,53 +69,6 @@ but it seems okay. This was originally implemented as a class with a render
 method, but the benchmark usually shows the function performing significantly
 better. Which makes me happy, because I'm not overly fond of ES classes.
 
-## Notes on using with Mastodon
-
-This was originally written as an experiment for Mastodon.
-
-To test in Mastodon, modify `components/components/status_content`:
-
-```diff
--    const content = { __html: emojify(status.get('content')) };
-+    const content = { __html: emojify(md(status.get('content'), true)) };
-```
-
-(Where `md` is `import md from 'zeedown'`.)
-
-You'll also need to override CSS to get `em` and `strong` to actually work.
-
-There's a full working diff
-[here](https://github.com/tootsuite/mastodon/compare/master...zacanger:feature/md).
-
-To test on Mastodon without changing any code (this needs work still):
-
-```javascript
-const runMd = () => {
- [].forEach.call($('.status__content'), (el) => {
-   $(el).replaceWith(zeedown(el.text()))
- })
-}
-
-// this could use mutationobserver or something?
-$(document).bind('DOMSubtreeModified', runMd)
-```
-
-This test function isn't working quite right. It's using jQuery just because
-Mastodon already has jQuery loaded, but should be totally doable without as
-well. It also updates all statuses every time there's a change, which is a mess.
-
-Why this instead of just using marked/commonmark/showdown/whatever? Two reasons:
-
-* It seems like a bad idea to allow some of the features that a full Markdown
-  implementation allows. Links, images, etc., especially could be problematic,
-  and Mastodon already has its own ways of handling those.
-
-* It seems like a _good_ idea to have a shortened syntax in some cases, to
-  save on character count.
-
-I'm excited about making this work as a browser extension, but it's only until
-[this issue](https://github.com/tootsuite/mastodon/issues/853) has a response.
-
 ## License
 
 [WTFPL](./LICENSE.md)
