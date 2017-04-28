@@ -18,6 +18,7 @@ to use `short` mode. In short mode:
 * Strong is a single set of asterisks
 * Emphasis is a single set of underscores
 * Strikethrough is a single set of tildes
+* No headers
 
 This is essentially the same as Slack's basic Markdown.
 
@@ -48,6 +49,7 @@ It takes an optional flag `-s` (or `--short`) to use `short` mode.
 * Fenced code blocks (not indent)
 * Blockquotes
 * Ordered/unordered lists
+* Headers
 
 ## Why Not Feature X?
 

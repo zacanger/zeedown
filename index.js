@@ -19,7 +19,16 @@ const zeedown = (str = '', shrt = false) => {
     ? /~(.*?)~/g
     : /\~\~(.*?)\~\~/g
 
+  const hedReg = shrt
+    ? /\b\B/g
+    : /(#+)(.*)/g
+
+  const hedRep = shrt
+    ? ''
+    : (_, chs, text) => `<h${chs.length}>${text.trim()}</h${chs.length}>`
+
   return str
+    .replace(hedReg, hedRep) // headers
     .replace(strongReg, strongRep) // strong
     .replace(emReg, emRep) // em
     .replace(delReg, '<del>$1</del>') // strike
