@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 if (module.parent) {
-  console.log('Please require zeedown, not zeedown/bin!')
+  console.log('Please import zeedown, not zeedown/cli!')
   process.exit(1)
 }
 
@@ -21,7 +21,6 @@ if (sendHelp) {
 }
 
 let text = ''
-
 process.stdin.resume()
 process.stdin.setEncoding('utf8')
 process.stdin.on('data', (chunk) => {
