@@ -65,9 +65,7 @@ Everything specified works. `ol`, `ul`, and `blockquote` are a little funky
 ## Performance
 
 A [quick little benchmark](https://jsperf.com/tootdown) has inconsistent results
-but it seems okay. This was originally implemented as a class with a render
-method, but the benchmark usually shows the function performing significantly
-better. Which makes me happy, because I'm not overly fond of ES classes.
+but it seems okay, and it's at lease a little better than it was when I started.
 
 ## License
 
