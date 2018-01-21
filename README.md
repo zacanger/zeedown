@@ -69,4 +69,4 @@ but it seems okay, and it's at lease a little better than it was when I started.
 
 ## License
 
-[WTFPL](./LICENSE.md)
+[MIT](./LICENSE.md)
