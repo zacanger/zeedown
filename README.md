@@ -1,5 +1,7 @@
 # zeedown
 
+**Unmaintained**
+
 ## Tiny markdown renderer for Node and browser, with CLI.
 
 [Demo](http://jsbin.com/lubugop/edit?html,js,output).
