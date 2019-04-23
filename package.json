@@ -1,6 +1,6 @@
 {
   "name": "zeedown",
-  "description": "Unmaintained Tiny markdown renderer for Node and browser, with CLI.",
+  "description": "Tiny markdown renderer for Node and browser, with CLI.",
   "version": "2.1.0",
   "author": "Zac Anger <zac@zacanger.com> (http://zacanger.com)",
   "license": "MIT",
