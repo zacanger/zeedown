@@ -1,3 +1,5 @@
+/* eslint-disable no-useless-escape */
+
 const zeedown = (str = '', shrt = false) => {
   const emReg = shrt
     ? /_(.*?)_/g

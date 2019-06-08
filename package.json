@@ -5,8 +5,13 @@
   "author": "Zac Anger <zac@zacanger.com> (http://zacanger.com)",
   "license": "MIT",
   "main": "index.js",
+  "files": [
+    "cli.js",
+    "index.js"
+  ],
   "bin": "./cli.js",
   "scripts": {
+    "preversion": "sortpack && standard && npm t",
     "test": "node test"
   },
   "homepage": "https://github.com/zacanger/zeedown#readme",
@@ -23,11 +28,11 @@
     "md",
     "renderer"
   ],
+  "devDependencies": {
+    "sortpack": "1.1.7",
+    "standard": "12.0.1"
+  },
   "engines": {
     "node": ">=6.4.0"
-  },
-  "files": [
-    "cli.js",
-    "index.js"
-  ]
+  }
 }
