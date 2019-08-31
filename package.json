@@ -3,7 +3,7 @@
   "description": "Tiny markdown renderer for Node and browser, with CLI.",
   "version": "2.2.2",
   "author": "Zac Anger <zac@zacanger.com> (http://zacanger.com)",
-  "license": "MIT",
+  "license": "LGPL-3.0",
   "main": "index.js",
   "files": [
     "cli.js",

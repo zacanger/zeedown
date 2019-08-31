@@ -67,6 +67,4 @@ Everything specified works. `ol`, `ul`, and `blockquote` are a little funky
 A [quick little benchmark](https://jsperf.com/tootdown) has inconsistent results
 but it seems okay, and it's at lease a little better than it was when I started.
 
-## License
-
-[MIT](./LICENSE.md)
+[LICENSE](./LICENSE.md)
