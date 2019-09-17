@@ -29,8 +29,8 @@
     "renderer"
   ],
   "devDependencies": {
-    "sortpack": "1.1.7",
-    "standard": "12.0.1"
+    "sortpack": "2.0.1",
+    "standard": "14.3.0"
   },
   "engines": {
     "node": ">=6.4.0"

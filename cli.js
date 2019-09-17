@@ -7,8 +7,8 @@ if (module.parent) {
 
 const zd = require('.')
 const arg = process.argv[2]
-const shrt = !!(arg && [ '-s', '--short' ].includes(arg))
-const sendHelp = !!(arg && [ '-h', '--help' ].includes(arg))
+const shrt = !!(arg && ['-s', '--short'].includes(arg))
+const sendHelp = !!(arg && ['-h', '--help'].includes(arg))
 
 if (sendHelp) {
   console.log(`
