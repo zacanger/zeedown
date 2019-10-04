@@ -1,8 +1,6 @@
 # zeedown
 
-## Tiny markdown renderer for Node and browser, with CLI.
-
-[Demo](http://jsbin.com/lubugop/edit?html,js,output).
+## Tiny Slack-style markdown renderer for Node and browser, with CLI.
 
 ## Installation
 
@@ -10,10 +8,11 @@
 
 ## Usage
 
-`zeedown(text: string, short: ?bool)`
+`zeedown(text: string): string`
 
-`zeedown` takes two parameters: a required string and an optional truthy value
-to use `short` mode. In short mode:
+`zeedown` takes one parameters: a required string.
+
+Difference from standard MD:
 
 * Strong is a single set of asterisks
 * Emphasis is a single set of underscores
@@ -27,7 +26,7 @@ import md from 'zeedown'
 // or
 const md = require('zeedown')
 
-md('some string', true)
+md('some string')
 md(process.argv[2])
 $('.foo').replaceWith(md($('.bar').text()))
 ```
@@ -38,8 +37,6 @@ $('.foo').replaceWith(md($('.bar').text()))
 
 `cat foo.md | zeedown > foo.html`
 
-It takes an optional flag `-s` (or `--short`) to use `short` mode.
-
 ## Supported Features
 
 * Strong (Bold)
@@ -49,7 +46,6 @@ It takes an optional flag `-s` (or `--short`) to use `short` mode.
 * Fenced code blocks (not indent)
 * Blockquotes
 * Ordered/unordered lists
-* Headers
 
 ## Why Not Feature X?
 
@@ -61,10 +57,5 @@ it's super popular.
 
 Everything specified works. `ol`, `ul`, and `blockquote` are a little funky
 (only work if not indented at all, need an extra pass to strip extra tags).
-
-## Performance
-
-A [quick little benchmark](https://jsperf.com/tootdown) has inconsistent results
-but it seems okay, and it's at lease a little better than it was when I started.
 
 [LICENSE](./LICENSE.md)

@@ -1,36 +1,13 @@
 /* eslint-disable no-useless-escape */
 
 const zeedown = (str = '', shrt = false) => {
-  const emReg = shrt
-    ? /_(.*?)_/g
-    : /(\*|_)(.*?)\1/g
-
-  const emRep = shrt
-    ? '<em>$1</em>'
-    : '<em>$2</em>'
-
-  const strongReg = shrt
-    ? /\*(.*?)\*/g
-    : /(\*\*|__)(.*?)\1/g
-
-  const strongRep = shrt
-    ? '<strong>$1</strong>'
-    : '<strong>$2</strong>'
-
-  const delReg = shrt
-    ? /~(.*?)~/g
-    : /\~\~(.*?)\~\~/g
-
-  const hedReg = shrt
-    ? /\b\B/g
-    : /(#+)(.*)/g
-
-  const hedRep = shrt
-    ? ''
-    : (_, chs, text) => `<h${chs.length}>${text.trim()}</h${chs.length}>`
+  const emReg = /_(.*?)_/g
+  const emRep = '<em>$1</em>'
+  const strongReg = /\*(.*?)\*/g
+  const strongRep = '<strong>$1</strong>'
+  const delReg = /~(.*?)~/g
 
   return str
-    .replace(hedReg, hedRep) // headers
     .replace(strongReg, strongRep) // strong
     .replace(emReg, emRep) // em
     .replace(delReg, '<del>$1</del>') // strike

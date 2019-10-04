@@ -7,7 +7,6 @@ if (module.parent) {
 
 const zd = require('.')
 const arg = process.argv[2]
-const shrt = !!(arg && ['-s', '--short'].includes(arg))
 const sendHelp = !!(arg && ['-h', '--help'].includes(arg))
 
 if (sendHelp) {
@@ -27,5 +26,5 @@ process.stdin.on('data', (chunk) => {
   text += chunk
 })
 process.stdin.on('end', () => {
-  console.log(zd(text, shrt))
+  console.log(zd(text))
 })
