@@ -1,8 +1,12 @@
 {
   "name": "zeedown",
   "description": "Tiny markdown renderer for Node and browser, with CLI.",
-  "version": "4.0.3",
+  "version": "4.0.4",
   "author": "Zac Anger <zac@zacanger.com> (http://zacanger.com)",
+  "funding": {
+    "type": "ko-fi",
+    "url": "https://ko-fi.com/zacanger"
+  },
   "license": "LGPL-3.0",
   "main": "index.js",
   "files": [
@@ -34,9 +38,5 @@
   },
   "engines": {
     "node": ">=6.4.0"
-  },
-  "funding": {
-    "type": "ko-fi",
-    "url": "https://ko-fi.com/zacanger"
   }
 }
