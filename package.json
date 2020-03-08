@@ -36,6 +36,7 @@
     "sortpack": "2.1.1",
     "standard": "14.3.1"
   },
+  "typings": "zeedown.d.ts",
   "engines": {
     "node": ">=6.4.0"
   }
