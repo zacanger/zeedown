@@ -19,6 +19,7 @@ if (sendHelp) {
   process.exit(0)
 }
 
+// eslint-disable-next-line fp/no-let
 let text = ''
 process.stdin.resume()
 process.stdin.setEncoding('utf8')
