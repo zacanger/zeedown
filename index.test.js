@@ -1,4 +1,4 @@
-const assert = require('assert')
+const tape = require('tape')
 const zd = require('.')
 
 const s = `
@@ -40,4 +40,8 @@ quote</blockquote>
 block</code></pre>
 `
 
-assert(zd(s) === se, 'works')
+tape.test('zeedown', (t) => {
+  t.true(zd(s) === se)
+  t.true(zd() === '')
+  t.end()
+})
