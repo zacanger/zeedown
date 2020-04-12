@@ -1,7 +1,7 @@
 {
   "name": "zeedown",
   "description": "Tiny markdown renderer for Node and browser, with CLI.",
-  "version": "4.1.3",
+  "version": "4.2.0",
   "author": "Zac Anger <zac@zacanger.com> (http://zacanger.com)",
   "funding": {
     "type": "ko-fi",
