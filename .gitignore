@@ -87,3 +87,4 @@ Temporary Items
 .VolumeIcon.icns
 .vscode
 x/
+.nyc_output
