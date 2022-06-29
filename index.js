@@ -1,4 +1,4 @@
-/* eslint-disable no-useless-escape, unicorn/no-unsafe-regex */
+/* eslint-disable no-useless-escape */
 
 const zeedown = (str = '') =>
   str
