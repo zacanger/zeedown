@@ -3,10 +3,6 @@
   "description": "Tiny markdown renderer for Node and browser, with CLI.",
   "version": "4.3.1",
   "author": "Zac Anger <zac@zacanger.com> (http://zacanger.com)",
-  "funding": {
-    "type": "ko-fi",
-    "url": "https://ko-fi.com/zacanger"
-  },
   "license": "MIT",
   "main": "index.js",
   "files": [
