@@ -1,6 +1,8 @@
 # zeedown
 
-## Tiny Slack-style markdown renderer for Node and browser, with CLI.
+Tiny Slack-style markdown renderer for Node and browser, with CLI.
+
+[Donate](https://ko-fi.com/zacanger)
 
 ## Installation
 
