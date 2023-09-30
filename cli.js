@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-if (module.parent) {
+if (require.main !== module) {
   console.log('Please import zeedown, not zeedown/cli!')
   process.exit(1)
 }

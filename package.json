@@ -34,9 +34,9 @@
   "devDependencies": {
     "npm-run-all": "4.1.5",
     "nyc": "15.1.0",
-    "sortpack": "2.3.2",
-    "standard": "17.0.0",
-    "tape": "5.6.1"
+    "sortpack": "2.3.4",
+    "standard": "17.1.0",
+    "tape": "5.7.0"
   },
   "typings": "zeedown.d.ts",
   "engines": {
